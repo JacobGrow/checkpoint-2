@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkpoint-2</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col text-center">
+          <h1>Planet Miner</h1>
+        </div>
+      </div>
+    </div>
+    
+  </header>
+  <main>
+    <!--Clicker Upgrades-->
+    <div class="container justify-content-center h-50">
+      <div class="row">
+        <div class="col-md-4 justify-center-left"> 
+          <button class="btn-primary" onclick="buyPickaxe()">Pickaxe <p class ="mb-0">Price:<p class="mb-0" id="pickPrice">10</p></button>
+          <button class="btn-primary" onclick="buyDrill()">Laser Drill <p class ="mb-0">Price:<p class="mb-0" id="drillPrice">500</p></button>
+          <button class="btn-primary" onclick="buyExcavator()">Ion Excavator <p class ="mb-0">Price:<p class="mb-0" id="exPrice">1000</p></button>
+          <div class="row">
+            <div class="col-6 pr-0">
+              <h5>Pickaxes in Use:</h5>
+            </div>
+              <div class="col-1 justify-center-left pl-0">
+                <h5 id="numPick">0</h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 pr-0">
+              <h5>Drills in Use:</h5>
+            </div>
+              <div class="col-1 pl-0">
+                <h5 id="numDrill">0</h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="md-col-6 pr-0">
+              <h5>Excavators in Use:</h5> 
+            </div>
+            <div class="col-2 pl-0 move-right">
+              <h5 class="move-right" id="numEx">0</h5>
+            </div>
+          </div>
+        </div>
+      
+      
+     <div class="col-md-4 text-center">
+       <div class="row">
+          <div class="col-md-11">
+
+  <img class="rotate img-fluid" onclick="mine()" src="planet.png" alt="IMG here">
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col"><h2>Raw Materials:<p id="rock">--</p></h2>
+          </div>
+        </div>
+      </div>
+
+          <!--Automatic Upgrades-->
+          <div class="col-md-4 text-right"> 
+            <button class="btn-primary" onclick="buyDroid()">Droid Miner <p class ="mb-0">Price:<p class="mb-0" id="droidPrice">500</p></button>
+            <button class="btn-primary" onclick="buyRover()">Rover <p class ="mb-0">Price:<p class="mb-0" id="roverPrice">1000</p></button>
+            <button class="btn-primary" onclick="buyFreighter()">Space Freighter<p class ="mb-0">Price:<p class="mb-0" id="freighterPrice">10000</p></button>
+            <div class="row">
+              <div class="col-11 pr-0">
+                <h5>Droids in Use:</h5>
+              </div>
+                <div class="col-1 justify-center-left pl-0">
+                  <h5 id="numDroid">0</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-11 pr-0">
+                <h5>Rovers in Use:</h5>
+              </div>
+                <div class="col-1 pl-0">
+                  <h5 id="numRover">0</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-11 pr-0">
+                <h5>Freighters in Use:</h5> 
+              </div>
+              <div class="col-1 pl-0">
+                <h5 id="numFreighter">0</h5>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+        
+
+ <!-- Selling materials for money -->     
+      
+        <div class="row mb-2">
+          <div class="col text-center small">
+            <h3>Savings:<p id="savings">--</p></h1>
+            <h5>Where do you want to sell your raw materials?</h5>
+          </div>
+        </div>
+        <div class="row w-100% justify-content-between spacing">
+          <div class="col-3 text-center">
+            <button onclick="lowCountdown()" class="btn btn-success small">Planet-X <p>Offer:<p id="lowOffer">--</p></p></button>
+            <div class="row justify-content-center">
+              <div class="col text-center p-0">
+
+                <div id="lowTimer" class="p-0">
+                  
+                         </div>
+                        </div>
+                      </div>
+              </div>
+                <div class="col-3 text-center">
+                  <button class="btn btn-success small" onclick="middleCountdown()">Planet-Y<p>Offer:<p><p id="middleOffer">--</p></p></button>
+                  <div class="row justify-content-center">
+                    <div class="col text-center p-0">
+                      <div id="middleTimer" class="p-0">
+                      </div>
+                        </div>
+                         </div>
+                          </div>
+              
+                <div class="col-3 text-center small">
+                  
+                  <button class="btn btn-success small" onclick="highCountdown()">Planet-Z<p>Offer:<p><p id="highOffer">--</p></p></button>
+                  <div class="row justify-content-center">
+                    <div class="col text-center p-0">
+      
+                      <div id="highTimer" class="p-0">
+                        
+                               </div>
+                              </div>
+                            </div>
+                </div>
+            
+            </div>
+     
+    
+  </main>
+  <footer></footer>
+<script src="app.js"></script>
+</body>
+</html>
