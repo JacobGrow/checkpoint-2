@@ -59,11 +59,11 @@ function mine(){
   update()
     if (savings > 50){
       i = randomNumber(1, 1000)
-      if (i>=1 && i<= 50){
+      if (i>=1 && i<= 12){
         alert("Workers are on strike. Productivity is down and debt has drained your savings.")
         savings = 0;
         savingsToString();}
-      else if (i>= 51 && i <= 100){
+      else if (i>= 13 && i <= 25){
       alert("A work accident caused a law suit that cost you 50% of your savings.")
       savings = savings*.5;
       savingsToString()
@@ -137,7 +137,7 @@ let clickUpgrades = {
 
 let passiveUpgrades = {
   droidMiner: {
-    price: 500,
+    price: 100,
     quantity: 0,
     multiplier: 5
 },
@@ -176,7 +176,7 @@ function smallOfferEvents(){
 function middleOfferEvents(){
   i = randomNumber(1, 100)
     if (i >= 1 && i<=10){
-      alert("The freigher captain took 50% of the transaction and fled.")
+      alert("The freighter captain took 50% of the transaction and fled.")
       middleOffered = middleOffered*.5
       }
   }
