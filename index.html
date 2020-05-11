@@ -113,7 +113,7 @@
         </div>
         <div class="row w-100% justify-content-between spacing">
           <div class="col-3 text-center">
-            <button onclick="lowCountdown()" class="btn btn-success small">Planet-X <p>Offer:<p id="lowOffer">--</p></p></button>
+            <button id="planetXButton" onclick="lowCountdown()" class="btn btn-success small">Planet-X <p>Offer:<p id="lowOffer">--</p></p></button>
             <div class="row justify-content-center">
               <div class="col text-center p-0">
 
@@ -124,7 +124,7 @@
                       </div>
               </div>
                 <div class="col-3 text-center">
-                  <button class="btn btn-success small" onclick="middleCountdown()">Planet-Y<p>Offer:<p><p id="middleOffer">--</p></p></button>
+                  <button id="planetYButton" class="btn btn-success small" onclick="middleCountdown()">Planet-Y<p>Offer:<p><p id="middleOffer">--</p></p></button>
                   <div class="row justify-content-center">
                     <div class="col text-center p-0">
                       <div id="middleTimer" class="p-0">
@@ -135,7 +135,7 @@
               
                 <div class="col-3 text-center small">
                   
-                  <button class="btn btn-success small" onclick="highCountdown()">Planet-Z<p>Offer:<p><p id="highOffer">--</p></p></button>
+                  <button type="button" class="btn btn-success small" onclick="highCountdown()" id="planetZButton">Planet-Z<p>Offer:<p><p id="highOffer">--</p></p></button>
                   <div class="row justify-content-center">
                     <div class="col text-center p-0">
       

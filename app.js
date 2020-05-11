@@ -15,7 +15,9 @@ function lowCountdown() {
   var elem = document.getElementById("lowTimer");
   var timerId = setTimeout(lowCountdown, 1000)
   elem.style.visibility = "visible"
+  document.getElementById("planetXButton").setAttribute('disabled', 'disabled')
   if (lowTimeLeft == -1) {
+    document.getElementById("planetXButton").removeAttribute('disabled')
     acceptLowOffer()
     clearTimeout(timerId)
     elem.style.visibility="hidden"
@@ -26,10 +28,14 @@ function lowCountdown() {
 }
 
 function middleCountdown() {
+  clearTimeout(middleTimeLeft)
+  clearInterval(middleTimeLeft)
   var elem = document.getElementById("middleTimer");
   var timerId = setTimeout(middleCountdown, 1000)
   elem.style.visibility = "visible"
+  document.getElementById("planetYButton").setAttribute('disabled', 'disabled')
   if (middleTimeLeft == -1) {
+    document.getElementById("planetYButton").removeAttribute('disabled')
     acceptMiddleOffer()
     clearTimeout(timerId)
     elem.style.visibility="hidden"
@@ -43,7 +49,9 @@ function highCountdown() {
   var elem = document.getElementById("highTimer");
   var timerId = setTimeout(highCountdown, 1000)
   elem.style.visibility = "visible"
+  document.getElementById("planetZButton").setAttribute('disabled', 'disabled')
   if (highTimeLeft == -1) {
+    document.getElementById("planetZButton").removeAttribute('disabled')
     acceptHighOffer()
     clearTimeout(timerId)
     elem.style.visibility="hidden"
