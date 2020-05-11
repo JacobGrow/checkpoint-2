@@ -59,11 +59,11 @@ function mine(){
   update()
     if (savings > 50){
       i = randomNumber(1, 1000)
-      if (i>=1 && i<= 12){
+      if (i>=1 && i<= 5){
         alert("Workers are on strike. Productivity is down and debt has drained your savings.")
         savings = 0;
         savingsToString();}
-      else if (i>= 13 && i <= 25){
+      else if (i>= 6 && i <= 8){
       alert("A work accident caused a law suit that cost you 50% of your savings.")
       savings = savings*.5;
       savingsToString()
@@ -254,6 +254,7 @@ function buyExcavator(){
 function buyDroid(){
   if (savings >= passiveUpgrades.droidMiner.price){
     savings -= passiveUpgrades.droidMiner.price;
+    savingsToString()
     passiveUpgrades.droidMiner.quantity += 1;
     passiveUpgrades.droidMiner.price *= 5;
     update()
@@ -266,6 +267,7 @@ function buyDroid(){
 function buyRover(){
 if (savings >= passiveUpgrades.rover.price){
   savings -= passiveUpgrades.rover.price;
+  savingsToString()
   passiveUpgrades.rover.quantity += 1;
   passiveUpgrades.rover.price *= 5;
   update()
@@ -278,6 +280,7 @@ else{
 function buyFreighter(){
   if (savings >= passiveUpgrades.spaceFreighter.price){
     savings -= passiveUpgrades.spaceFreighter.price;
+    savingsToString()
     passiveUpgrades.spaceFreighter.quantity += 1;
     passiveUpgrades.spaceFreighter.price *= 5;
     update()
