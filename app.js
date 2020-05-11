@@ -16,7 +16,11 @@ function lowCountdown() {
   var timerId = setTimeout(lowCountdown, 1000)
   elem.style.visibility = "visible"
   document.getElementById("planetXButton").setAttribute('disabled', 'disabled')
+  document.getElementById("planetZButton").setAttribute('disabled', 'disabled')
+  document.getElementById("planetYButton").setAttribute('disabled', 'disabled')
   if (lowTimeLeft == -1) {
+    document.getElementById("planetZButton").removeAttribute('disabled')
+    document.getElementById("planetYButton").removeAttribute('disabled')
     document.getElementById("planetXButton").removeAttribute('disabled')
     acceptLowOffer()
     clearTimeout(timerId)
@@ -34,8 +38,12 @@ function middleCountdown() {
   var timerId = setTimeout(middleCountdown, 1000)
   elem.style.visibility = "visible"
   document.getElementById("planetYButton").setAttribute('disabled', 'disabled')
+  document.getElementById("planetXButton").setAttribute('disabled', 'disabled')
+  document.getElementById("planetZButton").setAttribute('disabled', 'disabled')
   if (middleTimeLeft == -1) {
+    document.getElementById("planetZButton").removeAttribute('disabled')
     document.getElementById("planetYButton").removeAttribute('disabled')
+    document.getElementById("planetXButton").removeAttribute('disabled')
     acceptMiddleOffer()
     clearTimeout(timerId)
     elem.style.visibility="hidden"
@@ -50,8 +58,12 @@ function highCountdown() {
   var timerId = setTimeout(highCountdown, 1000)
   elem.style.visibility = "visible"
   document.getElementById("planetZButton").setAttribute('disabled', 'disabled')
+  document.getElementById("planetYButton").setAttribute('disabled', 'disabled')
+  document.getElementById("planetXButton").setAttribute('disabled', 'disabled')
   if (highTimeLeft == -1) {
     document.getElementById("planetZButton").removeAttribute('disabled')
+    document.getElementById("planetYButton").removeAttribute('disabled')
+    document.getElementById("planetXButton").removeAttribute('disabled')
     acceptHighOffer()
     clearTimeout(timerId)
     elem.style.visibility="hidden"
